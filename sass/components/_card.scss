@@ -1,0 +1,142 @@
+.card {
+  height: 52rem;
+  position: relative;
+  perspective: 100rem;
+  position: relative;
+
+  &__side {
+    background-color: $color-white;
+    height: 100%;
+    width: 100%;
+    transition: all 0.5s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 3px;
+    overflow: hidden;
+    backface-visibility: hidden;
+
+    &--front {
+      box-shadow: $shadow-1;
+    }
+
+    &--back {
+      transform: rotateY(180deg);
+
+      &--1 {
+        background-image: $gradient-secondary;
+      }
+      &--2 {
+        background-image: $gradient-primary;
+      }
+      &--3 {
+        background-image: $gradient-tertiary;
+      }
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+
+  &__image {
+    height: 23rem;
+    background-size: cover;
+
+    background-blend-mode: screen;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+    &--1 {
+      background-image: $gradient-secondary, url(../img/nat-5.jpg);
+    }
+    &--2 {
+      background-image: $gradient-primary, url(../img/nat-6.jpg);
+    }
+    &--3 {
+      background-image: $gradient-tertiary, url(../img/nat-7.jpg);
+    }
+  }
+
+  &__heading {
+    display: inline-block;
+    color: $color-white;
+    text-transform: uppercase;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    font-size: 3rem;
+    font-weight: 300;
+    width: 75%;
+    text-align: right;
+
+    &--1 > * {
+      background-image: $gradient-secondary;
+    }
+    &--2 > * {
+      background-image: $gradient-primary;
+    }
+    &--3 > * {
+      background-image: $gradient-tertiary;
+    }
+
+    span {
+      padding: 1rem 2rem;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+    }
+  }
+
+  &__details {
+    padding: 2rem 6rem;
+    list-style: none;
+    text-align: center;
+
+    li {
+      padding: 1rem;
+
+      &:not(:last-child) {
+        border-bottom: 2px solid $color-grey-light-1;
+      }
+    }
+  }
+
+  &__cta {
+    @include centerAbsolute;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__price {
+    margin-bottom: 4rem;
+
+    span {
+      display: block;
+      color: $color-white;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    &__only {
+      font-size: 1.5rem;
+    }
+
+    &__value {
+      font-size: 6rem;
+      font-weight: 300;
+    }
+  }
+}
+
+.card-hover {
+  .card__side--front {
+    transform: rotateY(-160deg);
+  }
+
+  .card__side--back {
+    transform: rotateY(20deg);
+  }
+}

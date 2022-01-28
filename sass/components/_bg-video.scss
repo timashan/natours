@@ -1,0 +1,30 @@
+.bg-video {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  &::before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(
+      rgba($color-white, 0.8) 0%,
+      $color-white 15%,
+      $color-white 20%,
+      rgba($color-white, 0.8) 20%
+    );
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}

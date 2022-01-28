@@ -1,0 +1,45 @@
+$color-primary: #55c57a;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #28b485;
+
+$color-secondary-light: #ffb900;
+$color-secondary-dark: #ff7730;
+
+$color-tertiary-light: #2998ff;
+$color-tertiary-dark: #5643fa;
+
+$gradient-primary: linear-gradient(
+  to right bottom,
+  $color-primary-light,
+  $color-primary-dark
+);
+
+$gradient-secondary: linear-gradient(
+  to right bottom,
+  $color-secondary-light,
+  $color-secondary-dark
+);
+
+$gradient-tertiary: linear-gradient(
+  to right bottom,
+  $color-tertiary-light,
+  $color-tertiary-dark
+);
+
+$gradient-primary-opaque: linear-gradient(
+  to right bottom,
+  rgba($color-primary-light, 0.8),
+  rgba($color-primary-dark, 0.8)
+);
+
+$shadow-1: 0 2rem 3rem rgba(0, 0, 0, 0.2);
+
+$color-grey-dark-1: #777;
+$color-grey-light-1: #f7f7f7;
+
+$color-white: #fff;
+$color-black: #000;
+
+$default-font-size: 1.6rem;
+
+$gutter-horizontal: 6rem;
