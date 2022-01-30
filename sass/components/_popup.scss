@@ -1,0 +1,70 @@
+.popup {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  background-color: rgba($color-black, 0.6);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:target &__content {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  &__close:link,
+  &__close:visited {
+    text-decoration: none;
+    color: $color-grey-dark-1;
+    position: absolute;
+    top: 0;
+    right: 2rem;
+    font-size: 3rem;
+  }
+
+  &__checkbox {
+    display: none;
+  }
+
+  &__content {
+    width: 75%;
+    background-color: $color-white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.2);
+    border-radius: 3px;
+    overflow: hidden;
+    transition: all 0.5s 0.2s;
+  }
+
+  &__text {
+    column-count: 2;
+    column-gap: 6rem;
+    column-rule: 2px solid $color-grey-light-3;
+    font-size: 1.4rem;
+  }
+
+  &__left {
+    width: 33.3333%;
+    display: table-cell;
+
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  &__right {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 5rem;
+  }
+}

@@ -1,0 +1,43 @@
+.footer {
+  color: $color-white;
+  &__list {
+    list-style: none;
+
+    li {
+      display: inline-block;
+
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  &__link:link,
+  &__link:visited {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    transition: all 0.1s;
+
+    &:hover {
+      transform: rotate(5deg) scale(1.2);
+      box-shadow: $shadow-1;
+      color: $color-primary;
+    }
+  }
+
+  &__list,
+  &__copyright {
+    display: inline-block;
+    border-top: 1px solid $color-grey-dark-1;
+    padding-top: 2rem;
+  }
+
+  &__copyright {
+    width: 80%;
+    float: right;
+  }
+}

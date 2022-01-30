@@ -32,9 +32,10 @@
   padding: 20rem;
   background-image: $gradient-primary;
 
-  .form__book {
+  .book {
     height: 50rem;
-    width: 100%;
+    transition: all 1.5s;
+
     background-image: linear-gradient(
         110deg,
         rgba($color-white, 0.9) 50%,
@@ -44,5 +45,19 @@
     background-size: cover;
     box-shadow: $shadow-1;
     border-radius: 3px;
+
+    &:focus-within {
+      background-position: bottom;
+    }
+
+    &__form {
+      width: 50%;
+      padding: 6rem;
+    }
   }
+}
+
+.footer {
+  background-color: $color-grey-dark-2;
+  padding: 10rem;
 }

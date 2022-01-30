@@ -1,0 +1,133 @@
+.navigation {
+  &__checkbox {
+    display: none;
+  }
+
+  &__checkbox:checked ~ &__background {
+    transform: scale(100);
+  }
+
+  &__checkbox:checked ~ .nav {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0);
+  }
+
+  &__checkbox:not(:checked) + &__button:hover > * {
+    width: 4rem;
+  }
+
+  &__button {
+    height: 7rem;
+    width: 7rem;
+    background-color: $color-white;
+    border-radius: 50%;
+    position: fixed;
+    top: 6rem;
+    right: 6rem;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: $shadow-1;
+  }
+
+  &__checkbox:checked + &__button &__icon {
+    background-color: transparent;
+  }
+
+  &__checkbox:checked + &__button &__icon::after {
+    transform: translateY(1rem) rotate(135deg);
+  }
+
+  &__checkbox:checked + &__button &__icon::before {
+    transform: translateY(-1rem) rotate(-135deg);
+  }
+
+  &__icon {
+    height: 0.15rem;
+    width: 3rem;
+    background-color: $color-grey-dark-2;
+    @include centerAbsolute;
+    transition: width 0.5s;
+
+    &::after,
+    &::before {
+      content: "";
+      height: inherit;
+      width: inherit;
+      background-color: $color-grey-dark-2;
+      position: absolute;
+      transition: all 0.5s;
+    }
+
+    &::after {
+      top: -1rem;
+    }
+
+    &::before {
+      top: 1rem;
+    }
+  }
+
+  &__background {
+    border-radius: 50%;
+    height: 5rem;
+    width: 5rem;
+    z-index: 998;
+    background-image: radial-gradient($color-primary, $color-primary-light);
+    position: fixed;
+    top: 7rem;
+    right: 7rem;
+    transition: all cubic-bezier(0.83, 0, 0.17, 1) 1s;
+  }
+
+  .nav {
+    z-index: 999;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-150rem);
+    transition: all cubic-bezier(0.68, -0.6, 0.32, 1.6) 0.8s;
+
+    &__list {
+      list-style: none;
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      li {
+        margin-bottom: 3rem;
+      }
+
+      span {
+        margin-right: 1rem;
+      }
+    }
+
+    &__link {
+      font-weight: 300;
+      font-size: 3rem;
+      color: $color-white;
+      text-decoration: none;
+      text-transform: uppercase;
+      padding: 2rem;
+      background-image: linear-gradient(
+        125deg,
+        transparent 50%,
+        $color-white 50%
+      );
+      background-size: 225%;
+      transition: all 0.5s;
+
+      &:hover {
+        color: $color-primary;
+        background-position: 100%;
+      }
+    }
+  }
+}
