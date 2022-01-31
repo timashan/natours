@@ -33,8 +33,20 @@
   padding: 0;
   box-sizing: inherit; }
 
+/*
+res          type          font-size  
+
+0-600px:     Phone         8px
+600-900px    tab-port      8px
+900-1200px   tab-land      9px
+[1200-1800]  normal        10px
+1800px+      big-desktop
+*/
 html {
   font-size: 62.5%; }
+  @media (max-width: 37.5em) {
+    html {
+      font-size: 50%; } }
 
 body {
   padding: 3.5rem;
@@ -127,7 +139,7 @@ body {
   display: inline-block;
   transition: all 0.5s;
   position: relative;
-  border: none; }
+  border: 1px solid transparent; }
   .btn:hover, .btn:link:hover, .btn:visited:hover {
     box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.25);
     transform: translateY(-5px);
@@ -156,8 +168,7 @@ body {
 
 .btn--white {
   background-color: #fff;
-  color: #777;
-  border: 1px solid #fff; }
+  color: #777; }
   .btn--white:hover {
     color: #fff;
     border: 1px solid #fff; }
