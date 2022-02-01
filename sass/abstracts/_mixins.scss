@@ -12,3 +12,26 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+@mixin respond($device) {
+  @if $device == phone {
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    }
+  }
+  @if $device == tab-port {
+    @media only screen and (max-width: 56.25em) {
+      @content;
+    }
+  }
+  @if $device == tab-land {
+    @media only screen and (max-width: 75em) {
+      @content;
+    }
+  }
+  @if $device == big-desktop {
+    @media only screen and (min-width: 125em) {
+      @content;
+    }
+  }
+}

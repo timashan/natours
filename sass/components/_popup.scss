@@ -8,6 +8,8 @@
   background-color: rgba($color-black, 0.6);
   opacity: 0;
   visibility: hidden;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
   transition: all 0.5s;
 
   &:target {

@@ -84,4 +84,16 @@
   &__radio:checked + &__radio-label &__radio-button::after {
     opacity: 1;
   }
+
+  @include respond(tab-port) {
+    &__input {
+      width: 100%;
+    }
+
+    &__group--radio {
+      width: 100%;
+      display: block;
+      margin-bottom: 1rem;
+    }
+  }
 }

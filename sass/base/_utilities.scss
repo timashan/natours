@@ -18,10 +18,6 @@
   margin-bottom: 8rem;
 }
 
-.u-letter-spacing-small {
-  letter-spacing: 1rem;
-}
-
 .u-margin-top-small {
   margin-top: 1.5rem;
 }
@@ -40,4 +36,12 @@
 
 .u-background-green {
   background-color: $color-primary;
+}
+
+.u-letter-spacing-small {
+  letter-spacing: 1rem;
+
+  @include respond(tab-port) {
+    letter-spacing: 00.5rem;
+  }
 }

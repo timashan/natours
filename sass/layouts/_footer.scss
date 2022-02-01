@@ -1,7 +1,13 @@
 .footer {
   color: $color-white;
+
   &__list {
     list-style: none;
+
+    @include respond(tab-port) {
+      width: 80%;
+      display: inline-block;
+    }
 
     li {
       display: inline-block;
@@ -14,7 +20,7 @@
 
   &__link:link,
   &__link:visited {
-    color: white;
+    color: $color-white;
     cursor: pointer;
     text-decoration: none;
     display: inline-block;
@@ -29,15 +35,24 @@
     }
   }
 
-  &__list,
+  &__navigation,
   &__copyright {
     display: inline-block;
     border-top: 1px solid $color-grey-dark-1;
     padding-top: 2rem;
+
+    @include respond(tab-port) {
+      display: block;
+      text-align: center;
+    }
   }
 
   &__copyright {
     width: 80%;
     float: right;
+
+    @include respond(tab-port) {
+      width: 100%;
+    }
   }
 }

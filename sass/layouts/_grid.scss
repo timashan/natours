@@ -1,8 +1,12 @@
 .row {
-  width: 114rem;
+  max-width: 114rem;
   margin: 0 auto;
-
   @include clearFix;
+
+  @include respond(tab-port) {
+    max-width: 50rem;
+    padding: 0 3rem;
+  }
 }
 
 [class^="col-"] {
@@ -10,6 +14,15 @@
 
   &:not(:last-child) {
     margin-right: $gutter-horizontal;
+
+    @include respond(tab-port) {
+      margin-right: 0;
+    }
+  }
+
+  @include respond(tab-port) {
+    width: 100% !important;
+    margin-bottom: 5rem;
   }
 }
 

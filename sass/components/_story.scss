@@ -6,14 +6,21 @@
   margin: 0 auto;
   transform: skew(-15deg);
   background-image: linear-gradient(rgba($color-white, 0.1) 25%, $color-white);
-  transition: all 1s;
 
-  &:hover {
-    transform: skew(-15deg) translateX(5rem);
+  @include respond(tab-port) {
+    width: 100%;
+  }
+
+  @include respond(phone) {
+    transform: skew(0);
   }
 
   & > * {
     transform: skew(15deg);
+
+    @include respond(phone) {
+      transform: skew(0);
+    }
   }
 
   &__img {
