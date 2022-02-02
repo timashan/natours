@@ -8,8 +8,8 @@
   background-color: rgba($color-black, 0.6);
   opacity: 0;
   visibility: hidden;
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   transition: all 0.5s;
 
   &:target {
@@ -36,7 +36,7 @@
   }
 
   &__content {
-    width: 75%;
+    width: 80%;
     background-color: $color-white;
     position: absolute;
     top: 50%;
@@ -45,6 +45,15 @@
     border-radius: 3px;
     overflow: hidden;
     transition: all 0.5s 0.2s;
+
+    @include respond(tab-port) {
+      width: 95%;
+    }
+
+    @include respond(phone) {
+      height: 100vh;
+      width: 100%;
+    }
   }
 
   &__text {
@@ -52,21 +61,49 @@
     column-gap: 6rem;
     column-rule: 2px solid $color-grey-light-3;
     font-size: 1.4rem;
+
+    @include respond(tab-port) {
+      column-gap: 3rem;
+      font-size: 1.2rem;
+    }
+
+    @include respond(phone) {
+      column-count: 1;
+    }
   }
 
   &__left {
     width: 33.3333%;
     display: table-cell;
+    vertical-align: middle;
 
-    img {
-      width: 100%;
-      display: block;
+    @include respond(phone) {
+      height: 100vh;
+    }
+  }
+
+  &__img {
+    object-fit: cover;
+    width: 100%;
+    height: 30rem;
+    display: block;
+
+    @include respond(tab-port) {
+      height: 35rem;
+    }
+
+    @include respond(phone) {
+      height: 50%;
     }
   }
 
   &__right {
     display: table-cell;
     vertical-align: middle;
-    padding: 5rem;
+    padding: 6rem;
+
+    @include respond(tab-land) {
+      padding: 3rem;
+    }
   }
 }

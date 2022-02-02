@@ -30,7 +30,7 @@
     }
   }
   @if $device == big-desktop {
-    @media only screen and (min-width: 125em) {
+    @media only screen and (min-width: 112.5em) {
       @content;
     }
   }

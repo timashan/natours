@@ -6,6 +6,7 @@
   margin: 0 auto;
   transform: skew(-15deg);
   background-image: linear-gradient(rgba($color-white, 0.1) 25%, $color-white);
+  align-items: baseline;
 
   @include respond(tab-port) {
     width: 100%;

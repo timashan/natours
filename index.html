@@ -95,18 +95,26 @@
             <div class="composition">
               <img
                 srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
+                sizes="(max-width: 56.25em) 15vh, (max-width: 37.5em) 20vh, 300px"
                 alt=""
                 class="composition__photo composition__photo-1"
+                src="img/nat-1-large.jpg"
               />
+
               <img
-                src="img/nat-2-large.jpg"
+                srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
+                sizes="(max-width: 56.25em) 15vh, (max-width: 37.5em) 20vh, 300px"
                 alt=""
                 class="composition__photo composition__photo-2"
+                src="img/nat-2-large.jpg"
               />
+
               <img
-                src="img/nat-3-large.jpg"
+                srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
+                sizes="(max-width: 56.25em) 15vh, (max-width: 37.5em) 20vh, 300px"
                 alt=""
                 class="composition__photo composition__photo-3"
+                src="img/nat-3-large.jpg"
               />
             </div>
           </div>
@@ -393,7 +401,20 @@
 
       <footer class="footer">
         <div class="logo u-center u-margin-bottom-huge">
-          <img src="img/logo-green-1x.png" alt="" />
+          <!-- <img src="img/logo-green-1x.png" alt="" /> -->
+          <picture>
+            <source
+              srcset="
+                img/logo-green-small-1x.png 1x,
+                img/logo-green-small-2x.png 2x
+              "
+              media="(max-width: 37.5em)"
+            />
+            <img
+              srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x"
+              alt=""
+            />
+          </picture>
         </div>
 
         <div class="row">
@@ -422,11 +443,11 @@
         <div class="popup__content">
           <a href="#section-tours" class="popup__close">&times;</a>
           <div class="popup__left">
-            <img src="img/nat-8.jpg" alt="" />
-            <img src="img/nat-9.jpg" alt="" />
+            <img class="popup__img" src="img/nat-8.jpg" alt="" />
+            <img class="popup__img" src="img/nat-9.jpg" alt="" />
           </div>
           <div class="popup__right">
-            <div class="u-margin-bottom-medium">
+            <div class="u-margin-bottom-small">
               <h2 class="heading-secondary u-background-green">
                 start booking now
               </h2>
@@ -448,7 +469,7 @@
               consequuntur amet expedita molestiae, natus pariatur voluptatum
               nulla.
             </p>
-            <a href="#" class="btn btn--green u-margin-top-medium">book now</a>
+            <a href="#" class="btn btn--green u-margin-top-small">book now</a>
           </div>
         </div>
       </div>

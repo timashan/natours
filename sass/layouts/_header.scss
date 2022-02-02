@@ -1,10 +1,15 @@
 .header {
   height: 95vh;
-  background-image: $gradient-primary-opaque, url(../img/hero.jpg);
+  background-image: $gradient-primary-opaque, url(../img/hero-small.jpg);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   background-size: cover;
   background-position: top;
   position: relative;
+
+  @media (min-resolution: 192dpi) and (min-width: 37.5em),
+    (min-width: 112.5em) {
+    background-image: $gradient-primary-opaque, url(../img/hero.jpg);
+  }
 
   @include respond(phone) {
     clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
