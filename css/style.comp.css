@@ -823,6 +823,7 @@ body {
   transform: translateX(-150rem);
   transition: all cubic-bezier(0.68, -0.6, 0.32, 1.6) 0.8s; }
   .navigation .nav__list {
+    width: 100%;
     list-style: none;
     text-align: center;
     position: absolute;
@@ -833,7 +834,7 @@ body {
       margin-bottom: 3rem; }
     .navigation .nav__list span {
       margin-right: 1rem; }
-  .navigation .nav__link {
+  .navigation .nav__link:link, .navigation .nav__link:visited {
     font-weight: 300;
     font-size: 3rem;
     color: #fff;
@@ -843,9 +844,9 @@ body {
     background-image: linear-gradient(125deg, transparent 50%, #fff 50%);
     background-size: 225%;
     transition: all 0.5s; }
-    .navigation .nav__link:hover {
-      color: #55c57a;
-      background-position: 100%; }
+  .navigation .nav__link:hover {
+    color: #55c57a;
+    background-position: 100%; }
 
 .section-about {
   background-color: #f7f7f7;
